@@ -1,0 +1,180 @@
+.home-container {
+  padding: 1rem 0;
+}
+
+
+
+/* Slider wrapper */
+.slider-wrapper {
+  position: relative;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  gap: 0.5%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  /* hide scrollbar */
+  scroll-snap-type: x mandatory;
+  align-items: center;
+}
+
+/* Center if few products */
+.slider.justify-center {
+  justify-content: center;
+}
+
+/* Hide scrollbar */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Flex item */
+.product-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 160px;
+  /* all cards same width */
+  height: auto;
+  /* all cards same height */
+  user-select: none;
+  /* prevent selection on drag */
+}
+
+/* Cursor */
+.cursor-grab {
+  cursor: grab;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+/* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(173, 172, 172, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.left-arrow {
+  left: -13px;
+}
+
+.right-arrow {
+  right: -15px;
+}
+
+/* FlashSale card */
+.flashsale-card {
+  background-color: #00000041;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.171) 1px, transparent 20px);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+  width: 100%;
+  height: auto;
+  border: 1px solid orange;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flashsale-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.555);
+}
+
+.flashsale-img {
+  width: 100%;
+  max-height: 500px;
+  /* all images same height */
+  object-fit: cover;
+  /* ensures same size without distortion */
+  pointer-events: none;
+  /* prevents image drag */
+}
+
+/* crud btn */
+#delete svg{
+font-size: 150%;
+border: 2px solid rgb(243, 57, 24);
+border-radius: 3px;
+cursor: pointer;
+}
+#edit svg{
+font-size: 150%;
+border: 2px solid rgb(8, 91, 235);
+border-radius: 3px;
+cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-item {
+    width: 180px;
+    height: 300px;
+  }
+
+  .header h1,
+  .header h2 {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .flashsale-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: 150px;
+    height: 250px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+
+  .flashsale-img {
+    height: 120px;
+  }
+}
