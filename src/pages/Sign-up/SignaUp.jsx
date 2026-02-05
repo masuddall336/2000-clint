@@ -26,7 +26,7 @@ const SignaUp = () => {
           lastLoginTime: rasult.user.metadata.lastLoginAt,
           lastSignInTime: rasult.user.metadata.lastSignInTime,
         }
-        fetch('http://localhost:3000/users', {
+        fetch('https://2000-server.vercel.app/users', {
           method: 'POST',
           headers: {
             'Content-type': 'application/json'

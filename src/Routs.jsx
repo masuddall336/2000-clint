@@ -17,7 +17,7 @@ let router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch('http://localhost:3000/products'),
+        loader: () => fetch('https://2000-server.vercel.app/products'),
         Component: Home
       },
       {
@@ -26,12 +26,12 @@ let router = createBrowserRouter([
       },
       {
         path: '/update-product/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),
+        loader: ({ params }) => fetch(`https://2000-server.vercel.app/products/${params.id}`),
         Component: UpdateProduct
       },
       {
         path: '/product-details/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),
+        loader: ({ params }) => fetch(`https://2000-server.vercel.app/products/${params.id}`),
         Component: ProductDetails
       },
       {
@@ -44,7 +44,7 @@ let router = createBrowserRouter([
       },
       {
         path: '/users',
-        loader: () => fetch('http://localhost:3000/users'),
+        loader: () => fetch('https://2000-server.vercel.app/users'),
         Component: Users
       }
     ]

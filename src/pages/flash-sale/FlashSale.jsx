@@ -25,7 +25,7 @@ const FlashSale = ({ all_flash_sale, prodcuts, setProducts }) => {
       console.log(result.isConfirmed);
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:3000/products/${id}`, {
+        fetch(`https://2000-server.vercel.app/products/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

@@ -17,7 +17,7 @@ const SignIn = () => {
           lastSignInTime: result.user.metadata.lastSignInTime
         }
         // send to db
-        fetch('http://localhost:3000/users', {
+        fetch('https://2000-server.vercel.app/users', {
           method: "PATCH",
           headers: {
             'Content-type': 'application/json'
